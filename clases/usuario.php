@@ -7,4 +7,4 @@ class Usuario{
     public $CONTRASEÑA;
 
     public function __construct() {}
-}
+} 

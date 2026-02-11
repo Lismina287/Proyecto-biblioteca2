@@ -178,7 +178,7 @@ CREATE TABLE `peliculas` (
 
 --
 -- Volcado de datos para la tabla `peliculas`
---
+-- 
 
 INSERT INTO `peliculas` (`ID`, `TITULO`, `AÑO_ESTRENO`, `DIRECTOR`, `ACTORES`, `GENERO`, `TIPO_ADAPTACION`, `ADAPTACION_ID`) VALUES
 (1, 'El editor de libros', '2016-01-01', 'Michael Grandage', 'Colin Firth, Jude Law, Nicole Kidman', 'Biografía', 'Película', NULL),
