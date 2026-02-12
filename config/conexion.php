@@ -3,7 +3,7 @@
 $servidor = "bbdd";
 $usuario = "root";
 $contraseña = "root";
-$nombre_bbdd = "proyecto_biblioteca";
+$nombre_bbdd = "proyecto_biblioteca2";
 
 $conexion = new mysqli($servidor, $usuario, $contraseña, $nombre_bbdd);
 
