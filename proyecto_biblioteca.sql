@@ -175,7 +175,7 @@ CREATE TABLE `peliculas` (
   `TIPO_ADAPTACION` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `ADAPTACION_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
+ 
 --
 -- Volcado de datos para la tabla `peliculas`
 -- 

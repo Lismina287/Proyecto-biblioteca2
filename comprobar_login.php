@@ -26,4 +26,4 @@ if ($usuario != null && hash("sha256", $contraseña) == $usuario->CONTRASEÑA) {
     //crear mensaje de error
     header("Location: login.php");
     exit;
-} 
+}  
