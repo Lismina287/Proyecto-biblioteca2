@@ -20,6 +20,7 @@ $usuario = $resultado->fetch_object(Usuario::class);
 
 //encriptar contraseña
 if ($usuario != null && hash("sha256", $contraseña) == $usuario->CONTRASEÑA) {
+    $_SESSION["usuario"] = $usuario->USUARIO;
     header("Location: reservas.php");
     exit;
 } else {
