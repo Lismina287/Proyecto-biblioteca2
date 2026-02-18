@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 //require
 require "config/conexion.php";
 require "clases/usuario.php";
@@ -19,7 +22,7 @@ $resultado = $sentencia->get_result();
 $usuario = $resultado->fetch_object(Usuario::class);
 
 //encriptar contraseña
-if ($usuario != null && hash("sha256", $contraseña) == $usuario->CONTRASEÑA) {
+if ($usuario != null && hash("sha256", $contraseña) == $usuario->CONTRASENA) {
     $_SESSION["usuario"] = $usuario->USUARIO;
     header("Location: reservas.php");
     exit;
