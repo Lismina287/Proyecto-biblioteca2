@@ -1,12 +1,11 @@
 <?php
 
-class Usuario{
-
+class Cliente {
     public $ID;
-    public $USUARIO;
-    public $CONTRASENA;
-    public $EMAIL;
+    public $NOMBRE;
+    public $APELLIDOS;
     public $FECHA_NACIMIENTO;
+    public $LOCALIDAD;
 
     public function __construct() {}
-}  
+}
