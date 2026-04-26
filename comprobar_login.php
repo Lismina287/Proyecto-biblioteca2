@@ -16,19 +16,19 @@ $contraseña = $_POST["contraseña"];
 
 $consulta = "SELECT * FROM usuarios WHERE USUARIO = ?";
 $sentencia = $conexion->prepare($consulta);
-$sentencia->bind_param("s", $nombreUsuario);
+$sentencia->bind_param("s", $usuario);
 $sentencia->execute();
 
 //get_result - recuperar los usuarios
 //store_result - cuenta el número de datos
 
 $resultado = $sentencia->get_result();
-$usuario = $resultado->fetch_object(Usuario::class);
+$usuarioObj = $resultado->fetch_object(Usuario::class);
 
 //encriptar contraseña
-  if ($usuario != null && hash("sha256", $contraseña) == $usuario->CONTRASEÑA) {
-    $_SESSION["usuario"] = $usuario->USUARIO;
-    header("Location: reservas.php");
+  if ($usuarioObj != null && hash("sha256", $contraseña) == $usuarioObj->CONTRASENA) {
+    $_SESSION["usuario"] = $usuarioObj->USUARIO;
+    header("Location: catalogo.php");
     exit;
 } else {
     //crear mensaje de error

@@ -4,7 +4,7 @@ class Usuario{
 
     public $ID;
     public $USUARIO;
-    public $CONTRASEÑA;
+    public $CONTRASENA;
     public $EMAIL;
     public $FECHA_NACIMIENTO;
 
