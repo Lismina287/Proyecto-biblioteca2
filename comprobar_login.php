@@ -23,12 +23,12 @@ $sentencia->execute();
 //store_result - cuenta el número de datos
 
 $resultado = $sentencia->get_result();
-$usuarioObj = $resultado->fetch_object(Usuario::class);
+$usuarioBD = $resultado->fetch_object(Usuario::class);
 
 //encriptar contraseña
-  if ($usuarioObj != null && hash("sha256", $contraseña) == $usuarioObj->CONTRASENA) {
-    $_SESSION["usuario"] = $usuarioObj->USUARIO;
-    header("Location: catalogo.php");
+  if ($usuarioBD != null && hash("sha256", $contraseña) == $usuarioBD->CONTRASENA) {
+    $_SESSION["usuario"] = $usuarioBD->USUARIO;
+    header("Location: info.php");
     exit;
 } else {
     //crear mensaje de error

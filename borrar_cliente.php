@@ -11,7 +11,7 @@ require "config/conexion.php";
 
 $id = $_GET["id"];
 
-$consulta = "ELETE FROM clientes WHERE ID = ?";
+$consulta = "DELETE FROM clientes WHERE ID = ?";
 $sentencia = $conexion->prepare($consulta);
 $sentencia->bind_param("i", $id);
 $sentencia->execute();

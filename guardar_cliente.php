@@ -10,7 +10,7 @@ if (!isset($_SESSION["usuario"])) {
 require "config/conexion.php";
 
 $nombre = $_POST["nombre"];
-$apellidos = $_POST["apellido"];
+$apellidos = $_POST["apellidos"];
 $fecha = $_POST["fecha"];
 $localidad = $_POST["localidad"];
 

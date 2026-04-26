@@ -7,7 +7,7 @@ if (!isset($_SESSION["usuario"])) {
 }
 
 require "config/conexion.php";
-require "clases/clientes.php";
+require "clases/cliente.php";
 
 $resultado = $conexion->query("SELECT * FROM clientes");
 
@@ -38,7 +38,8 @@ while(true){
                     <!-- (<?php echo $cliente->LOCALIDAD; ?>) -->
 
                     <a href="editar_cliente.php?id=<?php echo $cliente->ID; ?>">Editar | </a>
-                    <a href="borrar_cliente.php?id=>?php echo $cliente->ID; ?>">Borrar</a>
+                    <a href="borrar_cliente.php?id=<?php echo $cliente->ID; ?>">Borrar</a>
+                    
                 </li>
             <?php endforeach; ?>
         </ul>

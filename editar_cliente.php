@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
@@ -6,6 +7,7 @@ if (!isset($_SESSION["usuario"])) {
 }
 
 require "config/conexion.php";
+require "clases/cliente.php";
 
 $id = $_GET["id"];
 
