@@ -26,7 +26,7 @@ while(true){
 <html>
     <body>
         <h2>Listado de Clientes</h2>
-        <p>Usuario: <?php echo $_SESSION["usuario"];?></p>
+        <!-- <p>Usuario: <?php echo $_SESSION["usuario"];?></p> -->
 
         <a href="logout.php">Cerrar sesión</a><br>
         <a href="crear_cliente.php">Crear nuevo cliente</a><br>
@@ -35,7 +35,7 @@ while(true){
             <?php foreach ($clientes as $cliente): ?>
                 <li>
                     <?php echo $cliente->NOMBRE . " " . $cliente->APELLIDOS; ?>
-                    (<?php echo $cliente->LOCALIDAD; ?>)
+                    <!-- (<?php echo $cliente->LOCALIDAD; ?>) -->
 
                     <a href="editar_cliente.php?id=<?php echo $cliente->ID; ?>">Editar | </a>
                     <a href="borrar_cliente.php?id=>?php echo $cliente->ID; ?>">Borrar</a>

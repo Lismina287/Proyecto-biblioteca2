@@ -5,7 +5,7 @@ class Cliente {
     public $NOMBRE;
     public $APELLIDOS;
     public $FECHA_NACIMIENTO;
-    public $LOCALIDAD
+    public $LOCALIDAD;
 
     public function __construct() {}
 }
