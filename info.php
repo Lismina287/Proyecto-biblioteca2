@@ -7,7 +7,8 @@ if (!isset($_SESSION["usuario"])) {
 }
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <body>
         <h1>Bienvenido, <?php echo $_SESSION["usuario"]; ?></h1>
 

@@ -9,8 +9,8 @@ if (!isset($_SESSION["usuario"])) {
 
 ?>
 
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <body>
     <h2>Crear Cliente</h2>
     <form action="guardar_cliente.php" method="POST">

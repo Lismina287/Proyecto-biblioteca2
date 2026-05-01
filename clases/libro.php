@@ -4,9 +4,9 @@ class Libro {
     public $ID;
     public $TITULO;
     public $AUTOR_ID;
-    public $GÉNERO;
+    public $GENERO;
     public $EDITORIAL;
-    public $PÁGINAS;
+    public $PAGINAS;
     public $AÑO;
     public $PRECIO;
 

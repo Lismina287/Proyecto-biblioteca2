@@ -23,7 +23,8 @@ while(true){
 }
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <body>
         <h2>Listado de Clientes</h2>
         <!-- <p>Usuario: <?php echo $_SESSION["usuario"];?></p> -->
@@ -39,7 +40,6 @@ while(true){
 
                     <a href="editar_cliente.php?id=<?php echo $cliente->ID; ?>">Editar | </a>
                     <a href="borrar_cliente.php?id=<?php echo $cliente->ID; ?>">Borrar</a>
-                    
                 </li>
             <?php endforeach; ?>
         </ul>

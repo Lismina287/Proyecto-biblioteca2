@@ -20,7 +20,8 @@ $cliente = $sentencia->get_result()->fetch_assoc();
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <body>
         <h2>Editar Cliente</h2>
         <form action="actualizar_cliente.php" method="POST">
