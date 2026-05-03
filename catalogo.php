@@ -61,8 +61,8 @@ function reservado($conexion, $idLibro = null, $idPelicula = null) {
         <input type="submit" value="Filtrar">
     </form>
 
-    <a href="info.php">Volver</a>
-    
+    <a href="bienvenido.php">Volver</a>
+
     <h3>Libros</h3>
     <table border="1" cellpadding="5">
         <tr>
