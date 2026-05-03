@@ -7,7 +7,7 @@ class Libro {
     public $GENERO;
     public $EDITORIAL;
     public $PAGINAS;
-    public $AÑO;
+    public $YEAR;
     public $PRECIO;
 
     public function __construct() {}
