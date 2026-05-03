@@ -31,7 +31,7 @@ while(true){
 
         <a href="logout.php">Cerrar sesión</a><br>
         <a href="crear_cliente.php">Crear nuevo cliente</a><br>
-        <a href="info.php">Volver</a><br>
+        <a href="bienvenido.php">Volver</a><br>
 
         <table border="1" cellpadding="5">
         <tr>

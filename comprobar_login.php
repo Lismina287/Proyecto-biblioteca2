@@ -28,7 +28,7 @@ $usuarioBD = $resultado->fetch_object(Usuario::class);
 //encriptar contraseña
   if ($usuarioBD != null && hash("sha256", $contraseña) == $usuarioBD->CONTRASENA) {
     $_SESSION["usuario"] = $usuarioBD->USUARIO;
-    header("Location: info.php");
+    header("Location: bienvenido.php");
     exit;
 } else {
     //crear mensaje de error
