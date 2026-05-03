@@ -3,7 +3,7 @@
 class Pelicula {
     public $ID;
     public $TITULO;
-    public $AÑO_ESTRENO;
+    public $ANIO_ESTRENO;
     public $DIRECTOR;
     public $ACTORES;
     public $GENERO;
