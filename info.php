@@ -11,7 +11,7 @@ if (!isset($_SESSION["usuario"])) {
 <html lang="es">
     <body>
         <h1>Bienvenido, <?php echo $_SESSION["usuario"]; ?></h1>
-
+        <p>test</p>
         <ul>
             <li><a href="catalogo.php">Ver Catálogo</a></li>
             <li><a href="reservas.php">Ver reservas</a></li>
