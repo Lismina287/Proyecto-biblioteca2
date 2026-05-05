@@ -17,36 +17,48 @@ $consulta_libros = "SELECT * FROM libros";
 $consulta_pelis = "SELECT * FROM peliculas";
 
 if ($filtro && $valor) {
-    $consulta_libros .= " WHERE $filtro LIKE '%$valor%'";
-    $consulta_pelis .= " WHERE $filtro LIKE '%$valor%'";
+    if ($filtro == "YEAR") {
+        $consulta_libros .= " WHERE YEAR LIKE '%$valor%'";
+        $consulta_pelis .= " WHERE ANIO_ESTRENO LIKE '%$valor%'";
+    } elseif ($filtro == "AUTOR_ID") {
+        $consulta_libros .= " WHERE AUTOR_ID LIKE '%$valor%'";
+        $consulta_pelis .= " WHERE DIRECTOR LIKE '%$valor%'";
+    } else {
+        $consulta_libros .= " WHERE $filtro LIKE '%$valor%'";
+        $consulta_pelis .= " WHERE $filtro LIKE '%$valor%'";
+    }
 }
 
 $libros = $conexion->query($consulta_libros);
 $pelis = $conexion->query($consulta_pelis);
 
-function reservado($conexion, $idLibro = null, $idPelicula = null) {
-    if ($idLibro !== null) {
-        $consulta = "SELECT * FROM reservas WHERE ID_LIBRO = ?";
-        $sentencia = $conexion->prepare($consulta);
-        $sentencia->bind_param("i", $idLibro);
-    } elseif ($idPelicula !== null) {
-        $consulta = "SELECT * FROM reservas WHERE ID_PELICULA = ?";
-        $sentencia = $conexion->prepare($consulta);
-        $sentencia->bind_param("i", $idPelicula);
-    } else {
-        return false;
-    }
+$reservados_libros = [];
+$reservados_pelis = [];
 
-    $sentencia->execute();
-    $res = $sentencia->get_result();
-    return $res->num_rows > 0;
+$result_reservas = $conexion->query("SELECT ID_LIBRO, ID_PELICULA FROM reservas");
+while ($row = $result_reservas->fetch_assoc()) {
+    if ($row['ID_LIBRO']) $reservados_libros[] = $row['ID_LIBRO'];
+    if ($row['ID_PELICULA']) $reservados_pelis[] = $row['ID_PELICULA'];
+}
+
+function reservado($idLibro = null, $idPelicula = null) {
+    global $reservados_libros, $reservados_pelis;
+    if ($idLibro !== null) {
+        return in_array($idLibro, $reservados_libros);
+    }
+    if ($idPelicula !== null) {
+        return in_array($idPelicula, $reservados_pelis);
+    }
+    return false;
 }
 
 ?>
 
 <!DOCTYPE html>
 <html>
-
+<head>
+    <link rel="stylesheet" href="estilos.css">
+</head>
 <body>
     <h2>Catálogo</h2>
 
@@ -54,8 +66,8 @@ function reservado($conexion, $idLibro = null, $idPelicula = null) {
         <select name="filtro">
             <option value="TITULO">Título</option>
             <option value="GENERO">Género</option>
-            <option value="AUTOR_ID">Autor (ID)</option>
-            <option value="AÑO">Año</option>
+            <option value="AUTOR_ID">Autor/Director</option>
+            <option value="YEAR">Año</option>
         </select>
         <input type="text" name="valor" placeholder="Buscar">
         <input type="submit" value="Filtrar">
@@ -84,7 +96,7 @@ function reservado($conexion, $idLibro = null, $idPelicula = null) {
             <td><?= $l->YEAR ?></td>
 
             <td>
-                <?php if (reservado($conexion, $l->ID, null)): ?>
+                <?php if (reservado($l->ID, null)): ?>
                     <strong>No disponible</strong>
                 <?php else: ?>
                     Disponible
@@ -92,7 +104,7 @@ function reservado($conexion, $idLibro = null, $idPelicula = null) {
             </td>
 
             <td>
-                <?php if (!reservado($conexion, $l->ID, null)): ?>
+                <?php if (!reservado($l->ID, null)): ?>
                     <a href="seleccionar_cliente.php?libro=<?= $l->ID ?>">Reservar</a>
                 <?php endif; ?>
             </td>
@@ -120,14 +132,14 @@ function reservado($conexion, $idLibro = null, $idPelicula = null) {
                 <td><?= $p->DIRECTOR ?></td>
                 <td><?= $p->GENERO ?></td>
                 <td>
-                    <?php if (reservado($conexion, null, $p->ID)): ?>
+                    <?php if (reservado(null, $p->ID)): ?>
                         <strong>No disponible</strong>
                     <?php else: ?>
                         Disponible
                     <?php endif; ?>
                 </td>
                 <td>
-                    <?php if (!reservado($conexion, null, $p->ID)): ?>
+                    <?php if (!reservado(null, $p->ID)): ?>
                         <a href="seleccionar_cliente.php?pelicula=<?= $p->ID ?>">Reservar</a>
                     <?php endif; ?>
                 </td>

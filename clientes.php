@@ -25,6 +25,9 @@ while(true){
 ?>
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
     <body>
         <h2>Listado de Clientes</h2>
         <!-- <p>Usuario: <?php echo $_SESSION["usuario"];?></p> -->
@@ -50,9 +53,8 @@ while(true){
                 <td><?= $c->FECHA_NACIMIENTO ?></td>
                 <td><?= $c->LOCALIDAD ?></td>
                 <td>
-                    <a href="editar_cliente.php?id=<?= $c->ID ?>">Editar | </a>
-                    <a href="borrar_cliente.php?id=<?= $c->ID ?>">Borrar</a> |
-                    <a href="reserva_cliente.php?id=<?= $c->ID ?>">Reservar</a>
+                    <a href="editar_cliente.php?id=<?= $c->ID ?>">Editar</a>
+                    <a href="borrar_cliente.php?id=<?= $c->ID ?>">Borrar</a>
                 </td>
             </tr>
         <?php endforeach; ?>

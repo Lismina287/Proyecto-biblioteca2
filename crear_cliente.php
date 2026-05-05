@@ -11,6 +11,9 @@ if (!isset($_SESSION["usuario"])) {
 
 <!DOCTYPE html>
 <html lang="es">
+<head>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
 <body>
     <h2>Crear Cliente</h2>
     <form action="guardar_cliente.php" method="POST">

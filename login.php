@@ -5,6 +5,9 @@
 
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
     <body>
         <h1>Inicia de Sesión</h1>
         <form action="comprobar_login.php" method="POST">

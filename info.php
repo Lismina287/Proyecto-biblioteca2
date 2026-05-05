@@ -9,6 +9,9 @@ if (!isset($_SESSION["usuario"])) {
 
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
     <body>
         <h1>Bienvenido, <?php echo $_SESSION["usuario"]; ?></h1>
         <p>test</p>

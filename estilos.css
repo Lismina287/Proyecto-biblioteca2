@@ -1,0 +1,46 @@
+body {
+    background-color: #1a3c8a;
+    color: #ffcc00;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    color: #ffcc00;
+}
+
+h3 {
+    color: #ffffff;
+}
+
+table {
+    margin: 0 auto;
+    background-color: #ffffff;
+    color: #000000;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #ffcc00;
+    color: #1a3c8a;
+}
+
+td {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body a {
+    color: #ffffff;
+}
+
+td a {
+    color: #1a3c8a;
+    background-color: #ffcc00;
+    padding: 3px 8px;
+    text-decoration: none;
+}
+
+form {
+    margin: 0 auto;
+}
