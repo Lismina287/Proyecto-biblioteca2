@@ -23,7 +23,7 @@ if ($filtro && $valor) {
         $consulta_libros .= " WHERE YEAR LIKE '%$valor%'";
         $consulta_pelis .= " WHERE ANIO_ESTRENO LIKE '%$valor%'";
     } elseif ($filtro == "AUTOR_ID") {
-        $consulta_libros .= " WHERE AUTOR_ID LIKE '%$valor%'";
+        $consulta_libros .= " WHERE autores.NOMBRE LIKE '%$valor%'";
         $consulta_pelis .= " WHERE DIRECTOR LIKE '%$valor%'";
     } else {
         $consulta_libros .= " WHERE $filtro LIKE '%$valor%'";
