@@ -9,6 +9,7 @@ class Libro {
     public $PAGINAS;
     public $YEAR;
     public $PRECIO;
+    public $AUTOR;
 
     public function __construct() {}
 }

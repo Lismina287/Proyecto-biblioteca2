@@ -13,7 +13,9 @@ require "clases/pelicula.php";
 $filtro = $_GET["filtro"] ?? "";
 $valor = $_GET["valor"] ?? "";
 
-$consulta_libros = "SELECT * FROM libros";
+$consulta_libros = "SELECT libros.*, autores.NOMBRE AS AUTOR
+                    FROM libros
+                    LEFT JOIN autores ON libros.AUTOR_ID = autores.ID";
 $consulta_pelis = "SELECT * FROM peliculas";
 
 if ($filtro && $valor) {
@@ -92,7 +94,7 @@ function reservado($idLibro = null, $idPelicula = null) {
             <td><?= $l->ID ?></td>
             <td><?= $l->TITULO ?></td>
             <td><?= $l->GENERO ?></td>
-            <td><?= $l->AUTOR_ID ?></td>
+            <td><?= $l->AUTOR ?></td>
             <td><?= $l->YEAR ?></td>
 
             <td>
